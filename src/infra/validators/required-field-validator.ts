@@ -2,6 +2,6 @@ import { Validator } from "@/presentation/validator";
 
 export class RequiredFieldValidator implements Validator {
   validate(input: any): boolean {
-    return true
+    return input !== null && input !== undefined
   }
 }
