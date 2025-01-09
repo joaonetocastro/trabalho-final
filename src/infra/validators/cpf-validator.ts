@@ -24,7 +24,7 @@ export class CPFValidator implements Validator {
   }
 
   validate(input: any): boolean {
-    const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+    if (typeof input !== 'string') return false
     if (!this.validateCPFFormat(input)) return false
     if (!this.validateDigits(input)) return false
     return true
