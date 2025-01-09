@@ -10,4 +10,9 @@ describe('CPFValidator', () => {
     const validator = new CPFValidator();
     expect(validator.validate('12345678909')).toBe(false); // Sem pontos e traço
   });
+
+  it('should return false for an invalid CPF with incorrect check digits', () => {
+    const validator = new CPFValidator();
+    expect(validator.validate('529.982.247-21')).toBe(false); // CPF válido
+  });
 });
