@@ -14,3 +14,8 @@ it('should return false if value received is not a string', () => {
   const validator = new EmailValidator()
   expect(validator.validate(123)).toBe(false)
 })
+
+it('should return false if value after @ is not a domain', () => {
+  const validator = new EmailValidator()
+  expect(validator.validate('example@mail')).toBe(false)
+})
