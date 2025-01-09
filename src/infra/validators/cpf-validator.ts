@@ -1,7 +1,7 @@
 import { Validator } from "@/presentation/validator";
 
 export class CPFValidator implements Validator {
-  private calculateCheckDigits(cpf: string): boolean {
+  private validateDigits(cpf: string): boolean {
     const cleanCPF = cpf.replace(/\D/g, '');
     if (cleanCPF.length !== 11) return false;
 
@@ -18,10 +18,15 @@ export class CPFValidator implements Validator {
     return check1 === digits[9] && check2 === digits[10];
   }
 
+  validateCPFFormat(cpf: string) {
+    const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/
+    return cpfRegex.test(cpf)
+  }
+
   validate(input: any): boolean {
     const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
-    if (!cpfRegex.test(input)) return false
-    if (!this.calculateCheckDigits(input)) return false
+    if (!this.validateCPFFormat(input)) return false
+    if (!this.validateDigits(input)) return false
     return true
   }
 }
