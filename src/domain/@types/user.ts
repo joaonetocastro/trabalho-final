@@ -3,17 +3,12 @@ export enum AccountType {
   USER,
 }
 
-interface UserBaseProps {
+export interface UserAccountProps {
   id: number;
   name: string;
   email: string;
   password: string;
   type: AccountType;
   cpf: string;
-}
-
-export interface UserProps extends UserBaseProps {}
-
-export interface MotoristProps extends UserBaseProps {
-  car_plate: string;
+  car_plate?: string;
 }
