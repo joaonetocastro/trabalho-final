@@ -1,7 +1,7 @@
 import { Motorist } from "@/domain/entities/account";
 
 describe(Motorist.name, () => {
-  it("Should create an valid motorist account", () => {
+  it("should create a valid motorist account", () => {
     const id = 12345;
     const name = "John Doe";
     const email = "john.doe@email.com";

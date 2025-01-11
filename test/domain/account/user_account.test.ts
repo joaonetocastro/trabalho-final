@@ -1,7 +1,7 @@
 import { User } from "@/domain/entities/account";
 
 describe(User.name, () => {
-  it("Should create an valid user account", () => {
+  it("should create a valid user account", () => {
     const id = 12345;
     const name = "John Doe";
     const email = "john.doe@email.com";
