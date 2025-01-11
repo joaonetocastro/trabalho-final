@@ -1,4 +1,4 @@
-import { UserAccountProps } from "../@types/user";
+import { UserAccountProps } from "../@types/user-account";
 
 export class User {
   id: number;
