@@ -17,4 +17,9 @@ describe(Motorist.name, () => {
     expect(motorist.cpf).toBe(cpf);
     expect(motorist.car_plate).toBe(car_plate);
   });
+
+  it("Should exist attribute car_plate", () => {
+    const motorist = new Motorist() as any;
+    expect(motorist.car_plate).toBeDefined();
+  });
 });
