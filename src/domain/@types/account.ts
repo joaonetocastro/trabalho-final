@@ -3,7 +3,7 @@ export enum AccountType {
   USER,
 }
 
-export interface UserAccountProps {
+export interface AccountProps {
   id: number;
   name: string;
   email: string;

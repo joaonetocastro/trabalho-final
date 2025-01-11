@@ -1,5 +1,5 @@
-import { AccountType } from "@/domain/@types/user-account";
-import { User } from "@/domain/entities/user-account";
+import { AccountType } from "@/domain/@types/account";
+import { User } from "@/domain/entities/account";
 
 describe(User.name, () => {
   it("should create a valid user account", () => {

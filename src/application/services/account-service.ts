@@ -1,4 +1,4 @@
-import { CreateAccount } from "../../domain/entities/user-account";
+import { CreateAccount } from "../../domain/entities/account";
 
 export class AccountService implements CreateAccount {
   constructor(

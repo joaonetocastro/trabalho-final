@@ -1,4 +1,4 @@
-import { UserAccountProps } from "../@types/user-account";
+import { AccountProps } from "../@types/account";
 
 export class User {
   id: number;
@@ -8,7 +8,7 @@ export class User {
   cpf: string;
   car_plate?: string;
 
-  constructor(props: UserAccountProps) {
+  constructor(props: AccountProps) {
     this.id = props.id;
     this.name = props.name;
     this.email = props.email;
@@ -19,5 +19,5 @@ export class User {
 }
 
 export interface CreateAccount {
-  execute(params: UserAccountProps): Promise<boolean>;
+  execute(params: AccountProps): Promise<boolean>;
 }

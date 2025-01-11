@@ -1,4 +1,4 @@
-import { CreateAccountUseCase } from "../../../src/application/use-cases/createAccountUseCase";
+import { CreateAccountUseCase } from "../../../src/application/use-cases/create-account-use-case";
 
 describe("CreateAccountUseCase", () => {
   let createAccountUseCase: CreateAccountUseCase;
