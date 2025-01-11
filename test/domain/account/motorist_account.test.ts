@@ -8,7 +8,7 @@ describe(Motorist.name, () => {
     const password = "123456";
     const cpf = "12345678901";
     const car_plate = "ABC-1234";
-    const motorist = new Motorist() as any;
+    const motorist = new Motorist(id, name, email, password, cpf, car_plate);
 
     expect(motorist.id).toBe(id);
     expect(motorist.name).toBe(name);
@@ -19,7 +19,14 @@ describe(Motorist.name, () => {
   });
 
   it("Should exist attribute car_plate", () => {
-    const motorist = new Motorist() as any;
+    const id = 12345;
+    const name = "John Doe";
+    const email = "john.doe@email.com";
+    const password = "123456";
+    const cpf = "12345678901";
+    const car_plate = "ABC-1234";
+    const motorist = new Motorist(id, name, email, password, cpf, car_plate);
+
     expect(motorist.car_plate).toBeDefined();
   });
 });
