@@ -1,4 +1,5 @@
-import { User } from "@/domain/entities/account";
+import { AccountType } from "@/domain/@types/user";
+import { User } from "@/domain/entities/user";
 
 describe(User.name, () => {
   it("should create a valid user account", () => {
@@ -7,7 +8,14 @@ describe(User.name, () => {
     const email = "john.doe@email.com";
     const password = "123456";
     const cpf = "12345678901";
-    const user = new User(id, name, email, password, cpf);
+    const user = new User({
+      id,
+      name,
+      email,
+      password,
+      cpf,
+      type: AccountType.USER,
+    });
 
     expect(user.id).toBe(id);
     expect(user.name).toBe(name);
@@ -22,7 +30,14 @@ describe(User.name, () => {
     const email = "john.doe@email.com";
     const password = "123456";
     const cpf = "12345678901";
-    const user = new User(id, name, email, password, cpf);
+    const user = new User({
+      id,
+      name,
+      email,
+      password,
+      cpf,
+      type: AccountType.USER,
+    }) as any;
 
     expect(user.car_plate).toBeUndefined();
   });

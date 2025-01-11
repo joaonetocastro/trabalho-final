@@ -1,4 +1,5 @@
-import { Motorist } from "@/domain/entities/account";
+import { Motorist } from "@/domain/entities/user";
+import { AccountType } from "@/domain/@types/user";
 
 describe(Motorist.name, () => {
   it("should create a valid motorist account", () => {
@@ -8,7 +9,15 @@ describe(Motorist.name, () => {
     const password = "123456";
     const cpf = "12345678901";
     const car_plate = "ABC-1234";
-    const motorist = new Motorist(id, name, email, password, cpf, car_plate);
+    const motorist = new Motorist({
+      id,
+      name,
+      email,
+      password,
+      cpf,
+      car_plate,
+      type: AccountType.MOTORIST,
+    });
 
     expect(motorist.id).toBe(id);
     expect(motorist.name).toBe(name);
@@ -25,7 +34,15 @@ describe(Motorist.name, () => {
     const password = "123456";
     const cpf = "12345678901";
     const car_plate = "ABC-1234";
-    const motorist = new Motorist(id, name, email, password, cpf, car_plate);
+    const motorist = new Motorist({
+      id,
+      name,
+      email,
+      password,
+      cpf,
+      car_plate,
+      type: AccountType.MOTORIST,
+    });
 
     expect(motorist.car_plate).toBeDefined();
   });
