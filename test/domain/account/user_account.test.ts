@@ -15,4 +15,9 @@ describe(User.name, () => {
     expect(user.password).toBe(password);
     expect(user.cpf).toBe(cpf);
   });
+
+  it("Should not exist attribute car_plate", () => {
+    const user = new User() as any;
+    expect(user.car_plate).toBeUndefined();
+  });
 });
