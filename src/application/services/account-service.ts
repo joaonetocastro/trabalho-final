@@ -4,7 +4,7 @@ export class AccountService implements CreateAccount {
   constructor(
     // TODO: Implement accountRepository
     private readonly accountRepository: {}
-  ) {}
+  ) { }
 
-  async execute(): Promise<any> {}
+  async createAccount(): Promise<any> { }
 }

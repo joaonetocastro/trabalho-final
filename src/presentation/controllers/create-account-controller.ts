@@ -12,6 +12,6 @@ export class CreateAccountController implements Controller {
     if (!this.bodyValidator.validate(body)) {
       throw new Error('Failed to validate body.')
     }
-    return await this.createAccountUseCase.execute(body)
+    return await this.createAccountUseCase.createAccount(body)
   }
 }

@@ -19,5 +19,5 @@ export class User {
 }
 
 export interface CreateAccount {
-  execute(params: AccountProps): Promise<User>;
+  createAccount(params: AccountProps): Promise<User>;
 }

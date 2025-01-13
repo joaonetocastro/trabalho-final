@@ -22,7 +22,7 @@ it('should return an account if everything is ok', async () => {
     password_algorithm: 'bcrypt'
   }
 
-  stub.execute.mockResolvedValueOnce(new User(body))
+  stub.createAccount.mockResolvedValueOnce(new User(body))
   const response = await controller.execute(body)
 
   expect(response.id).toEqual(body.id)
@@ -46,7 +46,7 @@ it('should throw error if validation fails', async () => {
     password_algorithm: 'bcrypt'
   }
 
-  stub.execute.mockResolvedValueOnce(new User(body))
+  stub.createAccount.mockResolvedValueOnce(new User(body))
 
   expect(controller.execute(body)).rejects.toThrow(new Error('Failed to validate body.'))
 })
