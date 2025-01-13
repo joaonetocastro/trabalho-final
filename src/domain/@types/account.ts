@@ -4,11 +4,13 @@ export enum AccountType {
 }
 
 export interface AccountProps {
-  id: number
+  id: string
   name: string
   email: string
-  password: string
-  type: AccountType
   cpf: string
-  car_plate?: string
+  password: string
+  car_plate?: string | null
+  is_passenger: boolean
+  is_driver: boolean
+  password_algorithm: string
 }
