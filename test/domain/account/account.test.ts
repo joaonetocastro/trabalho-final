@@ -3,7 +3,7 @@ import { User } from '@/domain/entities/account'
 
 describe(User.name, () => {
   it('should create a valid user account', () => {
-    const id = 12345
+    const id = '12345'
     const name = 'John Doe'
     const email = 'john.doe@email.com'
     const password = '123456'
@@ -14,7 +14,8 @@ describe(User.name, () => {
       email,
       password,
       cpf,
-      type: AccountType.USER
+      type: AccountType.USER,
+      password_algorithm: 'bcrypt'
     })
 
     expect(user.id).toBe(id)
@@ -25,7 +26,7 @@ describe(User.name, () => {
   })
 
   it('Should not exist attribute car_plate', () => {
-    const id = 12345
+    const id = '12345'
     const name = 'John Doe'
     const email = 'john.doe@email.com'
     const password = '123456'
@@ -36,14 +37,15 @@ describe(User.name, () => {
       email,
       password,
       cpf,
-      type: AccountType.USER
+      type: AccountType.USER,
+      password_algorithm: 'bcrypt'
     }) as any
 
     expect(user.car_plate).toBeUndefined()
   })
 
   it('should create a valid driver account', () => {
-    const id = 12345
+    const id = '12345'
     const name = 'John Doe'
     const email = 'john.doe@email.com'
     const password = '123456'
@@ -56,7 +58,8 @@ describe(User.name, () => {
       password,
       cpf,
       car_plate,
-      type: AccountType.DRIVER
+      type: AccountType.DRIVER,
+      password_algorithm: 'bcrypt'
     })
 
     expect(driver.id).toBe(id)
@@ -68,7 +71,7 @@ describe(User.name, () => {
   })
 
   it('Should exist attribute car_plate', () => {
-    const id = 12345
+    const id = '12345'
     const name = 'John Doe'
     const email = 'john.doe@email.com'
     const password = '123456'
@@ -81,7 +84,8 @@ describe(User.name, () => {
       password,
       cpf,
       car_plate,
-      type: AccountType.DRIVER
+      type: AccountType.DRIVER,
+      password_algorithm: 'bcrypt'
     })
 
     expect(driver.car_plate).toBeDefined()

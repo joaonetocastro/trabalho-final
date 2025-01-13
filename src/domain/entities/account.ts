@@ -1,7 +1,7 @@
 import { AccountProps } from "../@types/account";
 
 export class User {
-  id: number;
+  id: string;
   name: string;
   email: string;
   password: string;

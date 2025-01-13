@@ -9,8 +9,7 @@ export interface AccountProps {
   email: string
   cpf: string
   password: string
-  car_plate?: string | null
-  is_passenger: boolean
-  is_driver: boolean
+  car_plate?: string
+  type: AccountType
   password_algorithm: string
 }
