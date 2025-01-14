@@ -38,4 +38,24 @@ describe("Account Repository", () => {
       new Error("Email already exists")
     );
   });
+
+  test("should find an account by email", async () => {
+    const account = {
+      name: "test_03",
+      email: "test_03@email.com",
+      password: "test_03",
+      id: "1",
+      cpf: "11221212121",
+      type: AccountType.DRIVER,
+      password_algorithm: "bcrypt",
+    };
+
+    const repository = new AccountRepository();
+    await repository.createAccount(account);
+
+    const accountFound = await repository.findAccountByEmail(account.email);
+    expect(accountFound?.name).toBe(account.name);
+    expect(accountFound?.email).toBe(account.email);
+    expect(accountFound?.cpf).toBe(account.cpf);
+  });
 });
