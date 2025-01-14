@@ -58,4 +58,11 @@ describe("Account Repository", () => {
     expect(accountFound?.email).toBe(account.email);
     expect(accountFound?.cpf).toBe(account.cpf);
   });
+
+  test("should return null if account not found", async () => {
+    const email = "any_email@email.com";
+    const repository = new AccountRepository();
+    const accountFound = await repository.findAccountByEmail(email);
+    expect(accountFound).toBe(null);
+  });
 });
