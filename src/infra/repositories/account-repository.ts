@@ -9,15 +9,20 @@ export class AccountRepository
   implements CreateAccountRepository, FindAccountByEmail
 {
   async createAccount(input: AccountProps): Promise<User> {
-    return new Promise((resolve, reject) => {
-      return input;
-    });
+    const emailAlreadyExists = await this.findAccountByEmail(input.email);
+
+    if (emailAlreadyExists) {
+      throw new Error("Email already exists");
+    }
+
+    const account = new User(input);
+    accounts.push(account);
+
+    return account;
   }
 
   async findAccountByEmail(email: string): Promise<User | null> {
-    return new Promise((resolve, reject) => {
-      const account = accounts.find((account) => account.email === email);
-      return account || null;
-    });
+    const account = await accounts.find((account) => account.email === email);
+    return account || null;
   }
 }
