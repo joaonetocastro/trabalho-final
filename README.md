@@ -1,3 +1,33 @@
+# Tópicos Especiais em Computação II
+
+## **Team**
+
+- **Students**:
+  - João de Oliveira Castro Neto
+  - Daniel Magalhães Farias
+  - Edilson Morais Brito
+- **Professor**: Dr. Eyder Franco Sousa Rios
+- **University**: Universidade Estadual do Piauí (UESPI)
+- **Course**: Bachelor in Computer Science
+- **Subject**: Tópicos Especiais em Computação II
+
+---
+
+## **Project Description**
+
+This project implements a use case for a backend system for a ride-hailing application using **TypeScript**, following the principles of **Clean Code**, **Clean Architecture**, **SOLID**, and **Test-Driven Development (TDD)**.
+
+### **Selected Use Case**
+
+**Signup (Account Creation)**
+The selected use case involves creating an account for passengers or drivers. The system ensures unique email addresses and allows the creation of accounts with details such as name, email, CPF, password, and car plate (for drivers).
+
+---
+
+## Diagram
+
+![Example Image](diagram.jpg 'Diagram of the use case')
+
 #### 1. Setup VSCode Extensions
 
 ```bash
@@ -86,33 +116,33 @@ DB_PASSWORD=mies
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      NODE_ENV: "dev" | "test" | "prod";
+      NODE_ENV: 'dev' | 'test' | 'prod'
 
-      API_KEY: string;
+      API_KEY: string
 
-      DB_SCHEMA: string;
-      DB_NAME: string;
-      DB_USER: string;
-      DB_PASSWORD: string;
+      DB_SCHEMA: string
+      DB_NAME: string
+      DB_USER: string
+      DB_PASSWORD: string
     }
   }
 }
 
-export {};
+export {}
 ```
 
 **`src/main.ts`**
 
 ```ts
-import dotenv from "dotenv";
+import dotenv from 'dotenv'
 
 const initApp = () => {
-  dotenv.config();
-};
+  dotenv.config()
+}
 
 const main = () => {
-  initApp();
-};
+  initApp()
+}
 ```
 
 #### 3. Setup Typescript
@@ -161,71 +191,71 @@ module.exports = {
     browser: false,
     es2023: true,
     node: true,
-    jest: true,
+    jest: true
   },
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2023,
-    sourceType: "module",
-    project: "./tsconfig.json",
+    sourceType: 'module',
+    project: './tsconfig.json'
   },
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript'
   ],
-  plugins: ["@typescript-eslint", "prettier", "markdown", "import"],
+  plugins: ['@typescript-eslint', 'prettier', 'markdown', 'import'],
   rules: {
     // ESLint Rules
-    "no-unused-vars": "warn",
-    "no-console": "warn",
-    "no-debugger": "error",
+    'no-unused-vars': 'warn',
+    'no-console': 'warn',
+    'no-debugger': 'error',
 
     // TypeScript Rules
-    "@typescript-eslint/no-unused-vars": ["error"],
-    "@typescript-eslint/explicit-module-boundary-types": "off",
+    '@typescript-eslint/no-unused-vars': ['error'],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
 
     // Prettier Rules
-    "prettier/prettier": [
-      "error",
+    'prettier/prettier': [
+      'error',
       {
         semi: false,
         singleQuote: true,
-        trailingComma: "es5",
+        trailingComma: 'es5',
         printWidth: 120,
-        tabWidth: 2,
-      },
+        tabWidth: 2
+      }
     ],
-    "import/order": [
-      "error",
+    'import/order': [
+      'error',
       {
-        groups: ["builtin", "external", "internal"],
+        groups: ['builtin', 'external', 'internal'],
         pathGroups: [
           {
-            pattern: "@/**",
-            group: "internal",
-            position: "after",
-          },
+            pattern: '@/**',
+            group: 'internal',
+            position: 'after'
+          }
         ],
-        pathGroupsExcludedImportTypes: ["builtin"],
+        pathGroupsExcludedImportTypes: ['builtin'],
         alphabetize: {
-          order: "asc",
-          caseInsensitive: true,
+          order: 'asc',
+          caseInsensitive: true
         },
-        "newlines-between": "always",
-      },
-    ],
+        'newlines-between': 'always'
+      }
+    ]
   },
   overrides: [
     {
-      files: ["**/*.md"],
-      processor: "markdown/markdown",
-    },
+      files: ['**/*.md'],
+      processor: 'markdown/markdown'
+    }
   ],
-  ignorePatterns: ["build", "coverage", "dist", "node_modules"],
-};
+  ignorePatterns: ['build', 'coverage', 'dist', 'node_modules']
+}
 ```
 
 #### 5. Setup Jest
@@ -250,7 +280,15 @@ const config: JestConfigWithTsJest = {
     '^(\\.{1,2}/.*)\\.js$': '$1',
     '@/(.*)': ['<rootDir>/src/$1']
   }
-};
+}
 
 export default config
+```
+
+## Running the tests
+
+Execute all tests using Jest:
+
+```
+yarn test
 ```
