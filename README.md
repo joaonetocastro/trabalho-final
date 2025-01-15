@@ -1,4 +1,6 @@
-# Tópicos Especiais em Computação II
+# Signup (Account Creation)
+
+## Tópicos Especiais em Computação II
 
 ## **Team**
 
